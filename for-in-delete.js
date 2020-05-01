@@ -40,10 +40,12 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let rString = ' '
+  for (let key in obj) {
+    rString+=obj[key]
+  }
+  return rString
 }
-
-
 
 ////////// PROBLEM 2 //////////
 
@@ -79,7 +81,15 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+const secrets = obj => {
+  let rString = ' '
+  for (let key in obj) {
+    if(key.startsWith('sh')) {
+    rString += obj[key] // if you use dot notation it is looking for a property named key in the object
+    }
+    return rString
+  }
+}
 
 
 
