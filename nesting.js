@@ -50,9 +50,29 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+// let employeeUpdater = () => {
+//   for (let i = 0; i < employees.length; i++) {
+//     if(employees[i].firstName = 'Theo') {
+//       delete employees[i]  //.firstname
+//     } 
+//     else if (employees[i].firstName = 'Lorie') {
+//       employees[i].department = 'HR'
+//       }
+//     }
+//     return employees;
+//   }
 
-
+const  employeeUpdater = ( ) => {
+  for (let i = 0; i < employees.length; i++) {
+    if(employees[i].firstName === 'Theo') {
+      delete employees[i].firstName
+    } else if(employees[i].firstName === 'Lorie') {
+      employees[i].department = 'HR'
+      }
+    }
+    return employees;
+  }
+   employeeUpdater( )
 
 ////////// PROBLEM 2 //////////
 
@@ -68,9 +88,21 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+const removeDuplicates = (arr) => {
+  for(let i=0;i<arr.length; i++){
+    //console.log(`For Loop 1 (i): ${i}`)
+    for(let j=arr.length -1;j>i; j--){
+      //console.log(`For Loop 2 (j): ${j}`)
+      if(arr[i] === arr[j]){
+        arr.splice(j,1)
+      }
+    }
+  }
+    return arr
+}
 
-
+removeDuplicates(workplaceAccidents)
+//return[(...new Set(arr))]
 
 ////////// PROBLEM 3 //////////
 
@@ -95,10 +127,15 @@ var cat = {
     1. Assign the value of Grumpy's 2nd activity to the grumpyActivity variable below.
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name
 
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+// var catStuff = [ ]
+//  for(var prop in cat) {
+//    catStuff.push( prop )
+//  }
+
+// catStuff[grumpyActivity,fluffy2msFriend]
 
 
 
@@ -138,9 +175,26 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+//(condition) ? (what to do if true) : (what to do if false)
+// const recordCleaner = () => {
+//   myCar.accidents.forEach(e => {
+//     return e[i].atFaultForAccident = false 
+//   })
+// }
 
+let recordCleaner = () => {
+  for( i = 0; i < myCar.accidents.length; i++){
+    myCar.accidents[i].atFaultForAccident = false
+    }
+  }
 
+  //for(i= 0; i < myCar.length;i++) {
+    //if(myCar[i].atFaultForAccident[i] === true) {
+//       if(element = true) {
+//       return myCar[i].atFaultForAccident[i] === false
+//     }
+//   }
+// }
 
 ////////// PROBLEM 5 //////////
 
@@ -157,6 +211,29 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+  const looper = () => {
+    numsArr.forEach(e => e.forEach((f,i) => {
+      if(f % 2 === 0){e[i] = 'even'}
+      else{e[i] = 'odd'}
+    }))
+    return numsArr
+  }
+  //array.forEach(function(val,i,arr) {
+//})
+//Array.forEach() = goes through each item in an array one by one and passes them into a function we give it. ForEach does not return a value and we cannot ask for a result. So if we want to update the original arr, we need to use it.
 
 
+  // const looper = ( ) => {
+//   numsArr.forEach(forEach(e => {
+//     if(e % 2 === 0){
+//       e = 'even'
+//     } else if (e % 2 == 1){
+//       e = 'odd'
+//     }
+//     return numsArr
+//   }))}
+// for(let i=0; i< numsArr.length; i++) {
+//    for(let j=0; i<numsArr.length; j++){
+//    if(numsArr[i]) % 2 = 0 : even
+//    }
+//   }
