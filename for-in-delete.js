@@ -41,9 +41,17 @@ for(var key in values) {
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
-  let rString = ' '
-  for (let key in obj) {
+// function showValues( obj ) {
+//   let rString = ' '
+//   for (let key in obj) {
+//     rString+=obj[key]
+//   }
+//   return rString
+// }
+
+let showValues = (obj) => {
+  rString = ''
+  for(let key in obj) {
     rString+=obj[key]
   }
   return rString
@@ -58,10 +66,13 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-// const greaterThan10 = ( obj) => {
-//   for( let key in obj)
-//   if()
-// }
+const greaterThan10 = (obj) => {
+  for( let key in obj)
+  if (obj[key] > 10) {
+    obj[key] =0
+  } 
+  return obj
+}
 
 
 
@@ -73,8 +84,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-cost 
-
+let double = obj => {
+    for(let key in obj) {
+      if (typeof obj[key] == 'number') {
+        obj[key]*= 2;
+      }
+    }
+    return obj
+  }
 
 
 ////////// PROBLEM 4 //////////
@@ -87,35 +104,34 @@ cost
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-const secrets = obj => {
-  let rString = ' '
-  for (let key in obj) {
-    if(key.startsWith('sh')) {
-    rString += obj[key] // if you use dot notation it is looking for a property named key in the object
+let secrets = obj => {
+  let rString =''
+    for (let key in obj) {
+      if(key.startsWith('sh')) {
+        rString += obj[key]
+      }
     }
     return rString
   }
-}
 
-
-
+// if you use dot notation it is looking for a property named key in the object
 /* 
   Sometimes it's needed to delete object properties. 
   All you need is the word delete before a reference to the object property value. 
   Uncomment the example below to see a for in loop deleting all the properties inside an object.
 */
 
-// var deleteAllThethings = {
-//   one: 1,
-//   two: 2,
-//   three: 3
-// }
+var deleteAllTheThings = {
+  one: 1,
+  two: 2,
+  three: 3
+}
 
-// for(var key in deleteAllThethings) {
-//   delete deleteAllThethings[key]
-// }
+for(var key in deleteAllTheThings) {
+  delete deleteAllTheThings[key]
+}
 
-// console.log(deleteAllThethings)
+ console.log(deleteAllTheThings)
 
 
 
@@ -126,9 +142,10 @@ const secrets = obj => {
   Delete the property password and return the object.
 */
 
-//Code Here
-
-
+let removePassword = obj => {
+  delete obj['password']
+  return obj
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -145,9 +162,11 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
-
-
+for(let key in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key]
+  }
+}
 
 ////////// PROBLEM 7 //////////
 

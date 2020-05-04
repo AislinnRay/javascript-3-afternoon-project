@@ -177,6 +177,7 @@ var myCar = {
 
 //(condition) ? (what to do if true) : (what to do if false)
 // const recordCleaner = () => {
+
 //   myCar.accidents.forEach(e => {
 //     return e[i].atFaultForAccident = false 
 //   })
@@ -211,29 +212,24 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-  const looper = () => {
-    numsArr.forEach(e => e.forEach((f,i) => {
-      if(f % 2 === 0){e[i] = 'even'}
-      else{e[i] = 'odd'}
-    }))
+  // const looper = () => {
+  //   numsArr.forEach(e => e.forEach((f,i) => {
+  //     if(f % 2 === 0){e[i] = 'even'}
+  //     else{e[i] = 'odd'}
+  //   }))
+  //   return numsArr
+  // }
+
+  
+const looper = () => {
+  for(let i=0; i< numsArr.length; i++) {
+     for(let j=0; j<numsArr[i].length; j++){
+     if(numsArr[i][j] % 2 === 0) {
+     numsArr[i][j] = "even";
+     }
+    else 
+       numsArr[i][j] = "odd";
+     }
+    }  
     return numsArr
-  }
-  //array.forEach(function(val,i,arr) {
-//})
-//Array.forEach() = goes through each item in an array one by one and passes them into a function we give it. ForEach does not return a value and we cannot ask for a result. So if we want to update the original arr, we need to use it.
-
-
-  // const looper = ( ) => {
-//   numsArr.forEach(forEach(e => {
-//     if(e % 2 === 0){
-//       e = 'even'
-//     } else if (e % 2 == 1){
-//       e = 'odd'
-//     }
-//     return numsArr
-//   }))}
-// for(let i=0; i< numsArr.length; i++) {
-//    for(let j=0; i<numsArr.length; j++){
-//    if(numsArr[i]) % 2 = 0 : even
-//    }
-//   }
+ }
